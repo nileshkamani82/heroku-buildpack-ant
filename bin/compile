@@ -58,6 +58,7 @@ export ANT_OPTS="-Xmx512m"
 # build app
 BUILDCMD="$ANT_HOME/bin/ant -Duser.home=${BUILD_DIR} clean install"
 echo "-----> executing $BUILDCMD"
+echo "-----> executing $JAVA_HOME"
 
 $BUILDCMD 2>&1 | indent
 ls -al ${PWD}  | indent
