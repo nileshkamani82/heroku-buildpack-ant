@@ -44,7 +44,7 @@ function indent() {
 
 ls -al $BUILD_DIR/solr/bin  | indent
 
-BUILDCMD="sh $BUILD_DIR/solr/bin/solr start -e cloud -noprompt"
+BUILDCMD="bash $BUILD_DIR/solr/bin/solr start -e cloud -noprompt"
 $BUILDCMD 2>&1 | indent
 
 ls -al ${BUILD_DIR}  | indent
