@@ -51,6 +51,7 @@ cd $VENDORING_DIR
 echo "-> VENDORING DIRECTORY $VENDORING_DIR....."
 echo "-> PROJECT DIRECTORY $BIN_DIR....."
 echo "-> CASH DIRECTORY $CACHE_DIR....."
+echo "-> BUILD DIRECTORY $BUILD_DIR....."
  
 
 if [ -x $ANT_HOME/bin/ant ] ; then
@@ -63,17 +64,23 @@ else
 	echo "-----> Installing Apache Ant $ANT_VER..... [done ]!"
 	#Install IVy
 	IvyInstall="$ANT_HOME/bin/ant ivy-bootstrap"
+       echo "-----> Installing IVy Bootstrap! .... [start]"
 	$IvyInstall
+	echo "-----> Installing IVy Bootstrap! [done ]!"
 fi
 
 
 if [ ! -f $BUILD_DIR/build.xml ] ; then
 	echo "Failed to build app with Apache Ant"
 fi
-
-
 # change to build dir to run ant
+
+echo "-> BUILD DIRECTORY $BUILD_DIR....."
+
 cd ${BUILD_DIR}/solr
+
+echo "-> BUILD DIRECTORY $BUILD_DIR....."
+
 
 export ANT_OPTS="-Xmx512m"
 
