@@ -90,12 +90,14 @@ export ANT_OPTS="-Xmx512m"
 # build app
 BUILDCMD="$ANT_HOME/bin/ant -Duser.home=${BUILD_DIR} clean server"
 echo "-----> executing $BUILDCMD"
-echo "-----> executing $JAVA_HOME"
 
 $BUILDCMD 2>&1 | indent
 ls -al ${PWD}  | indent
 
 ls -al ${BUILD_DIR}  | indent
+
+RUNSOLR="sh ${BUILD_DIR}/bin/solr start -e cloud -noprompt"
+$BUILDCMD 2>&1 | indent
 
 if [ "${PIPESTATUS[*]}" != "0 0" ]; then
   echo " !     Failed to build app with Apache Ant"
