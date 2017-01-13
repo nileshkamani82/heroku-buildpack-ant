@@ -94,7 +94,7 @@ ls -al ${PWD}  | indent
 
 ls -al ${BUILD_DIR}  | indent
 
-RUNSOLR="bash ${BUILD_DIR}/bin/solr start -e cloud -noprompt"
+RUNSOLR= "bash ${BUILD_DIR}/solr/bin/solr start -p 80 -e cloud -noprompt"
 $RUNSOLR 2>&1 | indent
 
 if [ "${PIPESTATUS[*]}" != "0 0" ]; then
