@@ -10,6 +10,10 @@ CACHE_DIR=$2
 ENV_DIR=$3
 echo "-----> Environment Directory is $ENV_DIR....."
 
+BP_DIR=$(cd $(dirname $0)/..; pwd) # absolute path
+. $BP_DIR/lib/common.sh
+
+
 export_env_dir $ENV_DIR
 JVM_COMMON_BUILDPACK=${JVM_COMMON_BUILDPACK:-https://codon-buildpacks.s3.amazonaws.com/buildpacks/heroku/jvm-common.tgz}
 mkdir -p /tmp/jvm-common
