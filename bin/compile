@@ -62,9 +62,16 @@ else
 	curl --max-time 180 --location $ANT_URL | tar xz
 	chmod +x $ANT_HOME/bin/ant
 	echo "-----> Installing Apache Ant $ANT_VER..... [done ]!"
+	
+	echo "-> BUILD DIRECTORY $BUILD_DIR....."
+
+	cd ${BUILD_DIR}/solr
+
+	echo "-> NEW BUILD DIRECTORY $BUILD_DIR....."
+	
 	#Install IVy
 	IvyInstall="$ANT_HOME/bin/ant ivy-bootstrap"
-       echo "-----> Installing IVy Bootstrap! .... [start]"
+        echo "-----> Installing IVy Bootstrap! .... [start]"
 	$IvyInstall
 	echo "-----> Installing IVy Bootstrap! [done ]!"
 fi
@@ -75,11 +82,7 @@ if [ ! -f $BUILD_DIR/build.xml ] ; then
 fi
 # change to build dir to run ant
 
-echo "-> BUILD DIRECTORY $BUILD_DIR....."
 
-cd ${BUILD_DIR}/solr
-
-echo "-> BUILD DIRECTORY $BUILD_DIR....."
 
 
 export ANT_OPTS="-Xmx512m"
