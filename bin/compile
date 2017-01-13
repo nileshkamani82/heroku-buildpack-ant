@@ -81,7 +81,7 @@ if [ ! -f $BUILD_DIR/build.xml ] ; then
 fi
 # change to build dir to run ant
 
-ls -al ${BUILD_DIR}/bin  | indent
+ls -al ${BUILD_DIR}/solr/bin  | indent
 exit 1
 
 
@@ -101,7 +101,7 @@ ls -al ${PWD}  | indent
 ls -al ${BUILD_DIR}  | indent
 
 RUNSOLR="sh ${BUILD_DIR}/bin/solr start -e cloud -noprompt"
-$BUILDCMD 2>&1 | indent
+$RUNSOLR 2>&1 | indent
 
 if [ "${PIPESTATUS[*]}" != "0 0" ]; then
   echo " !     Failed to build app with Apache Ant"
