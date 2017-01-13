@@ -81,6 +81,8 @@ if [ ! -f $BUILD_DIR/build.xml ] ; then
 fi
 # change to build dir to run ant
 
+ls -al ${BUILD_DIR}/bin  | indent
+exit 1
 
 
 
@@ -91,6 +93,9 @@ BUILDCMD="$ANT_HOME/bin/ant -Duser.home=${BUILD_DIR} clean server"
 echo "-----> executing $BUILDCMD"
 
 $BUILDCMD 2>&1 | indent
+
+ls -al ${BUILD_DIR}/bin  | indent
+
 ls -al ${PWD}  | indent
 
 ls -al ${BUILD_DIR}  | indent
