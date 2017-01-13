@@ -48,6 +48,10 @@ mkdir -p $VENDORING_DIR
 
 # change to vendoring dir to install apache ant
 cd $VENDORING_DIR
+echo "-> VENDORING DIRECTORY $VENDORING_DIR....."
+echo "-> PROJECT DIRECTORY $BIN_DIR....."
+echo "-> CASH DIRECTORY $CACHE_DIR....."
+ 
 
 if [ -x $ANT_HOME/bin/ant ] ; then
     #assuming Apache Ant is already installed...
@@ -57,6 +61,9 @@ else
 	curl --max-time 180 --location $ANT_URL | tar xz
 	chmod +x $ANT_HOME/bin/ant
 	echo "-----> Installing Apache Ant $ANT_VER..... [done ]!"
+	#Install IVy
+	IvyInstall="$ANT_HOME/bin/ant ivy-bootstrap"
+	$IvyInstall
 fi
 
 
