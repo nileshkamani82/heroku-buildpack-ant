@@ -5,28 +5,6 @@ BUILD_DIR="$1"
 
 . $(dirname $0)/common
 
-echo "current working directory:"
-
-ls -al ${PWD}  | indent
-
-echo "Build Dir:"
-
-ls -al ${BUILD_DIR}  | indent
-
-echo "Build Dir Solr:"
-
-ls -al ${BUILD_DIR}/solr  | indent
-
-echo "Build Dir  Solr  Bin :"
-
-ls -al ${BUILD_DIR}/solr/bin  | indent
-
-echo "Build Dir Solr  Server :"
-
-ls -al ${BUILD_DIR}/solr/server  | indent
-
-
-
 #here, we need to override the ANT_HOME variable
 ANT_HOME="/app/.buildpack/apache-ant-${ANT_VER}"
 
@@ -38,5 +16,5 @@ config_vars:
     JAVA_OPTS: "-Xmx384m -Xss512k -XX:+UseCompressedOops"
     ANT_OPTS: "-Xmx384m -Xss512k -XX:+UseCompressedOops"
 default_process_types:
-    web: ant server
+    web: bash ${BUILD_DIR}/solr/bin/solr start -e cloud -noprompt
 EOF
