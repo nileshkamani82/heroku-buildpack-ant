@@ -95,7 +95,25 @@ ls -al ${PWD}  | indent
 ls -al ${BUILD_DIR}  | indent
 
 echo "-----> executing DONE"
+echo "current working directory:"
 
+ls -al ${PWD}  | indent
+
+echo "Build Dir:"
+
+ls -al ${BUILD_DIR}  | indent
+
+echo "Build Dir Solr:"
+
+ls -al ${BUILD_DIR}/solr  | indent
+
+echo "Build Dir  Solr  Bin :"
+
+ls -al ${BUILD_DIR}/solr/bin  | indent
+
+echo "Build Dir Solr  Server :"
+
+ls -al ${BUILD_DIR}/solr/server  | indent
 
 # RUNSOLR= "bash ${BUILD_DIR}/solr/bin/solr start -p 80 -e cloud -noprompt"
 # $RUNSOLR 2>&1 | indent
