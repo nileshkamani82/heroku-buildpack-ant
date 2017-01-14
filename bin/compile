@@ -121,7 +121,7 @@ echo "current working directory:"
 
 ls -al ${PWD}  | indent
 
-RUNSOLR= "bash solr start"
+RUNSOLR= "solr start"
 $RUNSOLR 2>&1 | indent
 
 if [ "${PIPESTATUS[*]}" != "0 0" ]; then
