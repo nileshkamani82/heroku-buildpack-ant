@@ -7,6 +7,8 @@ BUILD_DIR="$1"
 
 echo "current working directory:"
 
+ls -al ${PWD}  | indent
+
 echo "Build Dir:"
 
 ls -al ${BUILD_DIR}  | indent
