@@ -88,7 +88,7 @@ export ANT_OPTS="-Xmx512m"
 BUILDCMD="$ANT_HOME/bin/ant clean server"
 echo "-----> executing $BUILDCMD"
 
-$BUILDCMD 2>&1 | indent
+# $BUILDCMD 2>&1 | indent
 
 ls -al ${PWD}  | indent
 
