@@ -117,7 +117,11 @@ ls -al ${BUILD_DIR}/solr/server  | indent
 
 cd ${BUILD_DIR}/solr/bin
 
-RUNSOLR= "bash solr start -e cloud -noprompt"
+echo "current working directory:"
+
+ls -al ${PWD}  | indent
+
+RUNSOLR= "bash solr start"
 $RUNSOLR 2>&1 | indent
 
 if [ "${PIPESTATUS[*]}" != "0 0" ]; then
