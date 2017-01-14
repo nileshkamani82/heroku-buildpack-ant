@@ -88,7 +88,7 @@ export ANT_OPTS="-Xmx512m"
 BUILDCMD="$ANT_HOME/bin/ant clean server"
 echo "-----> executing $BUILDCMD"
 
-# $BUILDCMD 2>&1 | indent
+$BUILDCMD 2>&1 | indent
 
 ls -al ${PWD}  | indent
 
@@ -115,8 +115,8 @@ echo "Build Dir Solr  Server :"
 
 ls -al ${BUILD_DIR}/solr/server  | indent
 
-# RUNSOLR= "bash ${BUILD_DIR}/solr/bin/solr start -p 80 -e cloud -noprompt"
-# $RUNSOLR 2>&1 | indent
+RUNSOLR= "bash ${BUILD_DIR}/solr/bin/solr start -e cloud -noprompt"
+$RUNSOLR 2>&1 | indent
 
 if [ "${PIPESTATUS[*]}" != "0 0" ]; then
   echo " !     Failed to build app with Apache Ant"
