@@ -64,15 +64,15 @@ else
 	
 	echo "-> BUILD DIRECTORY $BUILD_DIR....."
 
-	cd ${BUILD_DIR}/solr
+	#cd ${BUILD_DIR}/solr
 
-	echo "-> NEW BUILD DIRECTORY $BUILD_DIR....."
+	#echo "-> NEW BUILD DIRECTORY $BUILD_DIR....."
 	
 	#Install IVy
-	IvyInstall="$ANT_HOME/bin/ant ivy-bootstrap"
-        echo "-----> Installing IVy Bootstrap! .... [start]"
-	$IvyInstall
-	echo "-----> Installing IVy Bootstrap! [done ]!"
+	#IvyInstall="$ANT_HOME/bin/ant ivy-bootstrap"
+        #echo "-----> Installing IVy Bootstrap! .... [start]"
+	#$IvyInstall
+	#echo "-----> Installing IVy Bootstrap! [done ]!"
 fi
 
 
