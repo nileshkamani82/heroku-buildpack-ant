@@ -87,7 +87,6 @@ export ANT_OPTS="-Xmx512m"
 # build app
 BUILDCMD="$ANT_HOME/bin/ant clean server"
 echo "-----> executing $BUILDCMD"
-exit 1
 $BUILDCMD 2>&1 | indent
 echo "-----> executing DONE"
 
