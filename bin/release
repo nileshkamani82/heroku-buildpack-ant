@@ -16,5 +16,5 @@ config_vars:
     JAVA_OPTS: "-Xmx384m -Xss512k -XX:+UseCompressedOops"
     ANT_OPTS: "-Xmx384m -Xss512k -XX:+UseCompressedOops"
 default_process_types:
-    web: bash ${BUILD_DIR}/solr/bin/solr start -e cloud -noprompt
+    web: bash /app/solr/bin/solr start -e cloud -noprompt
 EOF
